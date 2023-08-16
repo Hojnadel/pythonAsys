@@ -79,6 +79,10 @@ IPython.display.Audio(x, rate=44100)
 
 
 
+#%%
+import sounddevice as sd
+sd.play(x,fs)
+
 
 
 
