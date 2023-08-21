@@ -76,25 +76,6 @@ sd.play(x,Fs)
 # Audio(x, rate=Fs)
 
 
-#%% Consigna B
-
-# x1 = sin(2*PI*260*t) + 4*cos(2*pi*440*t)
-# f1 = 260     f2 = 440
-# T0 = mT1 = nT2 -- m/f1 = n/f2 -- f2/f1 = n/m = 440/260 = 22/13
-T0 = 13/260
-dt = 1e-6
-
-t = np.arange(0, 2*T0, dt)
-x1 = np.sin(2*PI*260*t) + 4*np.cos(2*PI*440*t)
-
-plt.plot(t, x1); plt.grid()
-
-
-import IPython
-fs = 44100;
-t = np.arange(0, 2, 1/fs)
-x = np.sin(2*PI*1000*t)
-IPython.display.Audio(x, rate=44100)
 
 
 
