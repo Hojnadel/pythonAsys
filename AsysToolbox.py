@@ -26,7 +26,13 @@ def POTENCIA(x, T0, dt=1):
         return 1/T0 * np.sum(np.abs(x_T0)**2)*dt
 
 #Definición de la función IMPULSO UNITARIO APROXIMADO delta(t)
-delta = lambda t,Ts: np.piecewise(t, t==0, [1/Ts,0])
+def delta(t):
+    if len(t) == 1:       #Condición para un solo dato (no puede calcular dt)
+        delta = (t == 0)
+    else:                 #Condicón para vector de datos
+        dt = abs(t[1] - t[0])
+        delta = np.piecewise(t, (t<dt) * (t>-dt), [1/dt, 0])
+    return delta
 
 #Definición de la función ESCALÓN UNITARIO u(t)
 u = lambda t: np.piecewise(t, t>=0, [1,0])
