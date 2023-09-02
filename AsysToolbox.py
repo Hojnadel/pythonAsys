@@ -1,12 +1,5 @@
 #my_utils.py
-from IPython import get_ipython
 import numpy as np
-
-def clc():
-    print("\014")
-    
-def clearAll():
-    get_ipython().magic('reset -sf')
 
 def ENERGIA(x, dt=1):
     '''

@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 #%%
 
-dt = 0.001;
+dt = 0.001
 t = np.arange(-20, 20, dt)
 x = np.exp(-np.abs(t))
 
@@ -24,12 +24,12 @@ PI = np.pi
 dt = 0.001
 To = 0.2
 
-t = np.arange(0, To, dt)
+t = np.arange(0, 5*To, dt)
 x = np.sin(2*PI*5*t) + np.cos(2*PI*10*t)
 
 plt.plot(t, x)
 
-pot = utl.POTENCIA(x, dt, To)
+pot = utl.POTENCIA(x, To, dt)
 print("Potenica: ", pot)
 
 #%% C: x[n] = 2*(-5/8)^n * u[n]
@@ -39,7 +39,7 @@ x = 2*(-5/8)**n * utl.u(n)
 
 plt.stem(n,x)
 energia = utl.ENERGIA(x)
-print("Energia: ", energia)
+print("Energia: {:.2f}".format(energia))
 
 #%% C*: x[n] = 2*(-5/8)^n * u[n-1]
 
