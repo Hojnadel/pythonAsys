@@ -7,17 +7,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint as ode
 
+dt = 0.001
+t = np.arange(0, 2, dt)
+
 # Defino funcion de mi edo: 3y' + 5y = 2t
 def fun_orden1(y, t):
     ft = 2/3*t
     dy = -5/3*y + ft
     return dy
 
-dt = 0.001
-t = np.arange(0, 2, dt)
-
 CI = 0
 y_ode = ode(fun_orden1, CI, t)                  # Numérica
+
+
 y_an = 6/25*np.exp(-5/3*t) + 2/5*t - 6/25       # Analitica
 
 
